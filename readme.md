@@ -29,36 +29,24 @@ và lịch sử hoạt động của khách hàng.
 
 #### 🔹 Data Engineering
 
-- **Clean Code & OOP Architecture**
-  - Xây dựng ETL framework theo hướng module hóa
-  - Áp dụng các lớp cơ sở trừu tượng:
-    - `BaseExtractor`
-    - `BaseTransformer`
-    - `BaseLoader`
+- **Kiến trúc Medallion & OOP Architecture**
+  - Áp dụng các lớp cơ sở trừu tượng:BaseExtractor, BaseTransformer, BaseLoader
   - Giúp pipeline dễ mở rộng và tái sử dụng
 
-- **Kiến trúc Medallion**
-  - **Bronze Layer**
-    - Trích xuất dữ liệu thô từ nhiều nguồn file
-    - Giữ nguyên dữ liệu gốc và thêm metadata (`_ingested_at`, `_source`)
-  - **Silver Layer**
-    - Làm sạch dữ liệu (null handling, type casting)
-    - Chuẩn hóa và làm giàu dữ liệu (JOIN)
-    - Feature Engineering phục vụ phân tích
-  - **Gold Layer**
-    - Chuẩn hóa dữ liệu thành **Star Schema**
-    - Tối ưu cho BI & Analytics
-
-- **Tự động hóa**
-  - Load dữ liệu sạch vào **MySQL Data Warehouse** thông qua **SQLAlchemy**
-
+- **Bronze Layer**
+  - Trích xuất dữ liệu thô từ nhiều nguồn file
+  - Giữ nguyên dữ liệu gốc và thêm metadata (`_ingested_at`, `_source`)
+- **Silver Layer**
+  - Làm sạch dữ liệu (null handling, type casting)
+  - Chuẩn hóa và làm giàu dữ liệu (JOIN)
+  - Feature Engineering phục vụ phân tích
+- **Gold Layer**
+  - Chuẩn hóa dữ liệu thành **Star Schema**
+  - Tối ưu cho BI & Analytics
 #### 🔹 Data Analytics
 
-- **Mô hình hóa dữ liệu**
-  - Thiết kế **Star Schema**
-  - Fact trung tâm: `fact_churn`
-- **Trực quan hóa**
-  - Dashboard **Power BI** phân tích churn, chân dung khách hàng và yếu tố rủi ro
+- **Mô hình hóa dữ liệu**: Thiết kế **Star Schema**, Fact trung tâm: `fact_churn`
+- **Trực quan hóa**: Dashboard **Power BI** phân tích churn, chân dung khách hàng và yếu tố rủi ro
 
 ---
 
@@ -66,10 +54,10 @@ và lịch sử hoạt động của khách hàng.
 
 ### 2.1 Luồng dữ liệu (Data Flow)
 
-![Lakehouse Architecture](readme/etl/flow.png)
+![Flow](readme/etl/flow.png)
 ### 2.2 Medallion Layers
 
-![Pipeline](readme/etl/Medallion.png)
+![Medallion](readme/etl/Medallion.png)
 
 ---
 ## 📂 3. Cấu trúc dự án
@@ -123,13 +111,13 @@ Bank_Project/
 
 ### 4.2 Thiết lập môi trường
 **Bước 1:** Clone repository
-bash
+```powershell
 
 git clone https://github.com/username-cua-ban/bank-churn-etl.git
 cd Bank_Project
 ```
 **Bước 2:** Cài đặt thư viện
-bash
+```powershell
 pip install pandas sqlalchemy pymysql openpyxl
 ```
 **Bước 3:** Tạo database
@@ -140,9 +128,9 @@ python
 # mysql+pymysql://username:password@host/database
 DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
 ### 4.3 Chạy pipeline ETL
-bash
+```powershell
 python run_pipeline.py
-
+```
 Output mong đợi:
 
 ==============================================
