@@ -54,10 +54,10 @@ và lịch sử hoạt động của khách hàng.
 
 ### 2.1 Luồng dữ liệu (Data Flow)
 
-![Flow](readme/etl/flow.png)
+![Flow](etl/flow.png)
 ### 2.2 Medallion Layers
 
-![Medallion](readme/etl/Medallion.png)
+![Medallion](etl/Medallion.png)
 
 ---
 ## 📂 3. Cấu trúc dự án
@@ -123,6 +123,9 @@ pip install pandas sqlalchemy pymysql openpyxl
 **Bước 3:** Tạo database
 sql
 CREATE DATABASE bank_db;
+
+---
+
 **Bước 4:** Cấu hình kết nối
 python
 # mysql+pymysql://username:password@host/database
@@ -131,26 +134,6 @@ DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
 ```powershell
 python run_pipeline.py
 ```
-Output mong đợi:
-
-==============================================
-   BANK CHURN ETL: FULL PRODUCTION RUN
-==============================================
-
->>> STEP 1: BRONZE LAYER <<<
-[OK] Extracted: churn (10000 rows)
-
->>> STEP 2: SILVER LAYER <<<
-[OK] Transformed: silver_fact_churn
-
->>> STEP 3: GOLD LAYER <<<
-[OK] Ready: fact_churn
-[OK] Ready: dim_geography
-
->>> STEP 4: LOAD TO MYSQL <<<
-✅ MISSION ACCOMPLISHED!
-Successfully loaded tables to MySQL.
-
 ---
 
 ### 4.4 Dashboard Power BI
@@ -163,7 +146,7 @@ Trang tổng quan (Executive Overview) cung cấp bức tranh toàn cảnh về 
 - **Xu hướng rời bỏ theo thời gian:** Diễn biến tỷ lệ khách hàng rời bỏ qua các năm (2016 - 2019) để nhận diện xu hướng tăng/giảm.
 
 - **Tác động tài chính:** So sánh biến động tổng số dư (Balance) giữa nhóm khách hàng được giữ chân và nhóm đã rời bỏ, giúp đánh giá thiệt hại tài chính.
-![Churn_Analysis](readme/dashboard/Churn_Analysis.png)
+![Churn_Analysis](dashboard/Churn_Analysis.png)
 
 ---
 Trang phân tích chuyên sâu (Churn Analysis) đi sâu vào các yếu tố và hành vi tương quan dẫn đến quyết định rời bỏ của khách hàng:
@@ -177,7 +160,7 @@ Trang phân tích chuyên sâu (Churn Analysis) đi sâu vào các yếu tố v�
 - **Phân bổ khách hàng theo trạng thái (Customer Distribution):** Biểu đồ tròn minh họa cơ cấu khách hàng dựa trên trạng thái Hoạt động (Active) kết hợp với tình trạng Rời bỏ (Exited), giúp nhận diện rõ tỷ trọng khách hàng rời bỏ nằm chủ yếu ở nhóm có hoạt động tích cực hay không tích cực.
 
 - **Ma trận trạng thái hoạt động:** Bảng dữ liệu chi tiết phân loại khách hàng theo quốc gia và số dư để so sánh tỷ lệ Active/Inactive so với lượng rời bỏ thực tế.
-![Executive_Overview](readme/dashboard/Churn_Analysis.png)
+![Executive_Overview](dashboard/Churn_Analysis.png)
 
 ---
 
@@ -190,6 +173,6 @@ Trang khuyến nghị hành động (Recommendation) cung cấp các cảnh báo
 - **Danh sách hành động khuyến nghị:** Bảng chi tiết từng khách hàng (CustomerID) được gắn mức độ ưu tiên (Priority Level) kèm theo hành động cụ thể (Gửi khảo sát, Gọi điện giữ chân VIP...).
 
 - **Mô phỏng kịch bản (Simulator):** Công cụ giả lập cho phép điều chỉnh tỷ lệ giảm rủi ro mong muốn, từ đó tính toán ngay lập tức số lượng khách hàng có thể giữ lại và dòng tiền (Revenue) được bảo toàn.
-![Recommendation](readme/dashboard/Recommendation.png)
+![Recommendation](dashboard/Recommendation.png)
 
 ---# bank-churn
