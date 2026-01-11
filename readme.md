@@ -1,13 +1,18 @@
 # 📊 Bank Customer Churn – ETL Data Pipeline
 
-## 📑 Mục lục (Table of Contents)
+## 📑 Mục lục 
 
-- [📌 1. Giới thiệu](#-1-giới-thiệu)
-- [🏗 2. Kiến trúc hệ thống](#-2-kiến-trúc-hệ-thống)
-- [📂 3. Cấu trúc dự án](#-3-cấu-trúc-dự-án)
-- [🚀 4. Cài đặt & hướng dẫn sử dụng](#-4-cài-đặt--hướng-dẫn-sử-dụng)
+📌 1. Giới thiệu
 
----
+🏗 2. Kiến trúc hệ thống
+
+📂 3. Cấu trúc dự án
+
+🚀 4. Cài đặt & hướng dẫn sử dụng
+
+📈 5. Dashboard Power BI
+
+
 
 ## 📌 1. Giới thiệu
 
@@ -30,8 +35,8 @@ và lịch sử hoạt động của khách hàng.
 #### 🔹 Data Engineering
 
 - **Kiến trúc Medallion & OOP Architecture**
-  - Áp dụng các lớp cơ sở trừu tượng:BaseExtractor, BaseTransformer, BaseLoader
-  - Giúp pipeline dễ mở rộng và tái sử dụng
+  - Pipeline ETL được xây dựng theo nguyên lý **Lập trình hướng đối tượng**, tách biệt rõ giữa **lớp cơ sở trừu tượng (Base Class)** và **các lớp triển khai cụ thể (Concrete Class)**.
+  - Các thành phần xử lý ở từng tầng  **kế thừa trực tiếp từ các base class**, giúp: Đảm bảo tính nhất quán trong toàn bộ pipeline, tái sử dụng logic chung, hạn chế trùng lặp code
 
 - **Bronze Layer**
   - Trích xuất dữ liệu thô từ nhiều nguồn file
@@ -48,7 +53,7 @@ và lịch sử hoạt động của khách hàng.
 - **Mô hình hóa dữ liệu**: Thiết kế **Star Schema**, Fact trung tâm: `fact_churn`
 - **Trực quan hóa**: Dashboard **Power BI** phân tích churn, chân dung khách hàng và yếu tố rủi ro
 
----
+
 
 ## 🏗 2. Kiến trúc hệ thống
 
@@ -59,7 +64,7 @@ và lịch sử hoạt động của khách hàng.
 
 ![Data_Model](etl/data_model.png)
 
----
+
 
 ## 📂 3. Cấu trúc dự án
 ```text
@@ -99,7 +104,7 @@ Bank_Project/
 └── README.md
 ```
 
----
+
 ## 🚀 4. Cài đặt & hướng dẫn sử dụng
 ### 4.1 Yêu cầu tiên quyết
 - Python 3.8+
@@ -115,7 +120,7 @@ Bank_Project/
 **Bước 1:** Clone repository
 ```powershell
 
-git clone https://github.com/username-cua-ban/bank-churn-etl.git
+git clone https://github.com/thieencao/bank-churn.git
 cd Bank_Project
 ```
 **Bước 2:** Cài đặt thư viện
@@ -126,7 +131,7 @@ pip install pandas sqlalchemy pymysql openpyxl
 
 
 **Bước 3:** Tạo database
-- sql
+
 - CREATE DATABASE bank_db;
 
 
@@ -144,7 +149,7 @@ python run_pipeline.py
 ```
 
 
-### 4.4 Dashboard Power BI
+## 5  Dashboard Power BI
 Trang tổng quan (Executive Overview) cung cấp bức tranh toàn cảnh về tình hình biến động khách hàng và các chỉ số sức khỏe của doanh nghiệp:
 
 - **Các chỉ số hiệu suất chính (KPIs):** Theo dõi tổng số lượng khách hàng, so sánh tỷ lệ khách hàng đang hoạt động (Active), khách hàng không hoạt động và số lượng khách hàng đã rời bỏ (Exit Customer).
