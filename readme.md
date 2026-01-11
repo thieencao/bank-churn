@@ -55,11 +55,12 @@ và lịch sử hoạt động của khách hàng.
 ### 2.1 Luồng dữ liệu (Data Flow)
 
 ![Flow](etl/flow.png)
-### 2.2 Medallion Layers
+### 2.2 Data Modeling
 
-![Medallion](etl/Medallion.png)
+![Data_Model](etl/data_model.png)
 
 ---
+
 ## 📂 3. Cấu trúc dự án
 ```text
 
