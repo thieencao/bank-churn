@@ -26,8 +26,8 @@ kết hợp với kiến trúc **Medallion (Bronze → Silver → Gold)** nhằm
 - Dễ bảo trì (Maintainability)
 - Chất lượng và tính nhất quán của dữ liệu
 
-**Nguồn dữ liệu:**  
-Dữ liệu thô đa định dạng (**CSV & Excel**) bao gồm thông tin nhân khẩu học, tài chính  
+Nguồn dữ liệu:
+Dữ liệu thô đa định dạng (CSV & Excel) bao gồm thông tin nhân khẩu học, tài chính  
 và lịch sử hoạt động của khách hàng.
 
 ### ✨ Các đặc điểm chính
@@ -35,8 +35,8 @@ và lịch sử hoạt động của khách hàng.
 #### 🔹 Data Engineering
 
 - **Kiến trúc Medallion & OOP Architecture**
-  - Pipeline ETL được xây dựng theo nguyên lý **Lập trình hướng đối tượng**, tách biệt rõ giữa **lớp cơ sở trừu tượng (Base Class)** và **các lớp triển khai cụ thể (Concrete Class)**.
-  - Các thành phần xử lý ở từng tầng  **kế thừa trực tiếp từ các base class**, giúp: Đảm bảo tính nhất quán trong toàn bộ pipeline, tái sử dụng logic chung, hạn chế trùng lặp code
+  - Pipeline ETL được xây dựng theo nguyên lý Lập trình hướng đối tượng, tách biệt rõ giữa lớp cơ sở trừu tượng (Base Class) và các lớp triển khai cụ thể (Concrete Class).
+  - Các thành phần xử lý ở từng tầng kế thừa trực tiếp từ các base class giúp đảm bảo tính nhất quán trong toàn bộ pipeline, tái sử dụng logic chung, hạn chế trùng lặp code
 
 - **Bronze Layer**
   - Trích xuất dữ liệu thô từ nhiều nguồn file
@@ -46,12 +46,12 @@ và lịch sử hoạt động của khách hàng.
   - Chuẩn hóa và làm giàu dữ liệu (JOIN)
   - Feature Engineering phục vụ phân tích
 - **Gold Layer**
-  - Chuẩn hóa dữ liệu thành **Star Schema**
+  - Chuẩn hóa dữ liệu thành Star Schema
   - Tối ưu cho BI & Analytics
 #### 🔹Data Analytics
 
-- **Mô hình hóa dữ liệu**: Thiết kế **Star Schema**, Fact trung tâm: `fact_churn`
-- **Trực quan hóa**: Dashboard **Power BI** phân tích churn, chân dung khách hàng và yếu tố rủi ro
+- **Mô hình hóa dữ liệu**: Thiết kế Data Model Star Schema, Fact trung tâm: `fact_churn`
+- **Trực quan hóa**: Dashboard Power BI phân tích churn, chân dung khách hàng và yếu tố rủi ro
 
 
 
@@ -132,16 +132,17 @@ pip install pandas sqlalchemy pymysql openpyxl
 
 **Bước 3:** Tạo database
 
-- CREATE DATABASE bank_db;
+sql
 
-
+CREATE DATABASE bank_db;
 
 **Bước 4:** Cấu hình kết nối
-- python
-- mysql+pymysql://username:password@host/database
-- DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
 
+python
 
+mysql+pymysql://username:password@host/database
+
+DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
 
 ### 4.3 Chạy pipeline ETL
 ```powershell
