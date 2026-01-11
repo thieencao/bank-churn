@@ -43,7 +43,7 @@ và lịch sử hoạt động của khách hàng.
 - **Gold Layer**
   - Chuẩn hóa dữ liệu thành **Star Schema**
   - Tối ưu cho BI & Analytics
-#### 🔹 Data Analytics
+#### 🔹Data Analytics
 
 - **Mô hình hóa dữ liệu**: Thiết kế **Star Schema**, Fact trung tâm: `fact_churn`
 - **Trực quan hóa**: Dashboard **Power BI** phân tích churn, chân dung khách hàng và yếu tố rủi ro
@@ -130,6 +130,9 @@ CREATE DATABASE bank_db;
 python
 # mysql+pymysql://username:password@host/database
 DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
+
+---
+
 ### 4.3 Chạy pipeline ETL
 ```powershell
 python run_pipeline.py
