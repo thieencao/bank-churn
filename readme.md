@@ -109,6 +109,8 @@ Bank_Project/
 
 - Git
 
+---
+
 ### 4.2 Thiết lập môi trường
 **Bước 1:** Clone repository
 ```powershell
@@ -120,16 +122,19 @@ cd Bank_Project
 ```powershell
 pip install pandas sqlalchemy pymysql openpyxl
 ```
+
+---
+
 **Bước 3:** Tạo database
-sql
-CREATE DATABASE bank_db;
+-sql
+-CREATE DATABASE bank_db;
 
 ---
 
 **Bước 4:** Cấu hình kết nối
-python
-# mysql+pymysql://username:password@host/database
-DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
+-python
+-mysql+pymysql://username:password@host/database
+-DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
 
 ---
 
@@ -149,6 +154,7 @@ Trang tổng quan (Executive Overview) cung cấp bức tranh toàn cảnh về 
 - **Xu hướng rời bỏ theo thời gian:** Diễn biến tỷ lệ khách hàng rời bỏ qua các năm (2016 - 2019) để nhận diện xu hướng tăng/giảm.
 
 - **Tác động tài chính:** So sánh biến động tổng số dư (Balance) giữa nhóm khách hàng được giữ chân và nhóm đã rời bỏ, giúp đánh giá thiệt hại tài chính.
+  
 ![Churn_Analysis](dashboard/Churn_Analysis.png)
 
 ---
@@ -163,6 +169,7 @@ Trang phân tích chuyên sâu (Churn Analysis) đi sâu vào các yếu tố v�
 - **Phân bổ khách hàng theo trạng thái (Customer Distribution):** Biểu đồ tròn minh họa cơ cấu khách hàng dựa trên trạng thái Hoạt động (Active) kết hợp với tình trạng Rời bỏ (Exited), giúp nhận diện rõ tỷ trọng khách hàng rời bỏ nằm chủ yếu ở nhóm có hoạt động tích cực hay không tích cực.
 
 - **Ma trận trạng thái hoạt động:** Bảng dữ liệu chi tiết phân loại khách hàng theo quốc gia và số dư để so sánh tỷ lệ Active/Inactive so với lượng rời bỏ thực tế.
+  
 ![Executive_Overview](dashboard/Churn_Analysis.png)
 
 ---
@@ -176,6 +183,7 @@ Trang khuyến nghị hành động (Recommendation) cung cấp các cảnh báo
 - **Danh sách hành động khuyến nghị:** Bảng chi tiết từng khách hàng (CustomerID) được gắn mức độ ưu tiên (Priority Level) kèm theo hành động cụ thể (Gửi khảo sát, Gọi điện giữ chân VIP...).
 
 - **Mô phỏng kịch bản (Simulator):** Công cụ giả lập cho phép điều chỉnh tỷ lệ giảm rủi ro mong muốn, từ đó tính toán ngay lập tức số lượng khách hàng có thể giữ lại và dòng tiền (Revenue) được bảo toàn.
+  
 ![Recommendation](dashboard/Recommendation.png)
 
 ---# bank-churn
