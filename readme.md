@@ -150,7 +150,7 @@ python run_pipeline.py
 ```
 
 
-## 5  Dashboard Power BI
+## 📈 5. Dashboard Power BI
 Trang tổng quan (Executive Overview) cung cấp bức tranh toàn cảnh về tình hình biến động khách hàng và các chỉ số sức khỏe của doanh nghiệp:
 
 - **Các chỉ số hiệu suất chính (KPIs):** Theo dõi tổng số lượng khách hàng, so sánh tỷ lệ khách hàng đang hoạt động (Active), khách hàng không hoạt động và số lượng khách hàng đã rời bỏ (Exit Customer).
