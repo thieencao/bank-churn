@@ -126,15 +126,15 @@ pip install pandas sqlalchemy pymysql openpyxl
 ---
 
 **Bước 3:** Tạo database
--sql
--CREATE DATABASE bank_db;
+- sql
+- CREATE DATABASE bank_db;
 
 ---
 
 **Bước 4:** Cấu hình kết nối
--python
--mysql+pymysql://username:password@host/database
--DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
+- python
+- mysql+pymysql://username:password@host/database
+- DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
 
 ---
 
@@ -178,7 +178,7 @@ Trang khuyến nghị hành động (Recommendation) cung cấp các cảnh báo
 
 - **Cảnh báo rủi ro (Critical Alert):** Phân khúc rủi ro cao nhất cần xử lý ngay lập tức Nhóm khách hàng Nữ tại Đức với số dư 100k-150k.
 
-- **Phát hiện bất thường (Anomaly Detection):** Cảnh báo các mẫu hành vi bất thường trong hành trình khách hàng (![alt text](image.png)Tỷ lệ rời bỏ 100% ở nhóm sở hữu 4 sản phẩm).
+- **Phát hiện bất thường (Anomaly Detection):** Cảnh báo các mẫu hành vi bất thường trong hành trình khách hàng (Tỷ lệ rời bỏ 100% ở nhóm sở hữu 4 sản phẩm).
 
 - **Danh sách hành động khuyến nghị:** Bảng chi tiết từng khách hàng (CustomerID) được gắn mức độ ưu tiên (Priority Level) kèm theo hành động cụ thể (Gửi khảo sát, Gọi điện giữ chân VIP...).
 
