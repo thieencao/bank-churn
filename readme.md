@@ -109,7 +109,6 @@ Bank_Project/
 
 - Git
 
----
 
 ### 4.2 Thiết lập môi trường
 **Bước 1:** Clone repository
@@ -123,26 +122,26 @@ cd Bank_Project
 pip install pandas sqlalchemy pymysql openpyxl
 ```
 
----
+
 
 **Bước 3:** Tạo database
 - sql
 - CREATE DATABASE bank_db;
 
----
+
 
 **Bước 4:** Cấu hình kết nối
 - python
 - mysql+pymysql://username:password@host/database
 - DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
 
----
+
 
 ### 4.3 Chạy pipeline ETL
 ```powershell
 python run_pipeline.py
 ```
----
+
 
 ### 4.4 Dashboard Power BI
 Trang tổng quan (Executive Overview) cung cấp bức tranh toàn cảnh về tình hình biến động khách hàng và các chỉ số sức khỏe của doanh nghiệp:
@@ -158,6 +157,7 @@ Trang tổng quan (Executive Overview) cung cấp bức tranh toàn cảnh về 
 ![Churn_Analysis](dashboard/Churn_Analysis.png)
 
 ---
+
 Trang phân tích chuyên sâu (Churn Analysis) đi sâu vào các yếu tố và hành vi tương quan dẫn đến quyết định rời bỏ của khách hàng:
 
 - **Tương quan Sản phẩm & Rời bỏ:** Phân tích mối quan hệ giữa số lượng sản phẩm khách hàng sử dụng với tỷ lệ rời bỏ (đặc biệt phát hiện điểm bất thường ở nhóm dùng 3-4 sản phẩm).
