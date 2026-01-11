@@ -133,17 +133,17 @@ pip install pandas sqlalchemy pymysql openpyxl
 **Bước 3:** Tạo database
 
 sql
-
+```powershell
 CREATE DATABASE bank_db;
-
+```
 **Bước 4:** Cấu hình kết nối
 
 python
-
+```powershell
 mysql+pymysql://username:password@host/database
 
 DB_CONN_STR = "mysql+pymysql://root:your_password@localhost/bank_db"
-
+```
 ### 4.3 Chạy pipeline ETL
 ```powershell
 python run_pipeline.py
